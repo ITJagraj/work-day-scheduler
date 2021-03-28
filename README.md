@@ -10,3 +10,4 @@ HTML
 CSS
 jQuery
 moment.js
+Local storage
