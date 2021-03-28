@@ -27,33 +27,34 @@ $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 function hour() {
     var currenthour = moment().hour();
-
     //loop over time blocks
     $(".time-block").each(function () {
-        var blockHour = parseInt($(this).attr("id").split("hour")[1]);
-        console.log( blockHour, currentHour)
+        var blockHour = parselnt($(this).attr("name");
 
-        if(blockHour <currenthour) {
+        console.log(blockHour, currentHour)
+
+        if (blockHour < currenthour) {
             $(this).addClass("past");
             $(this).removeClass("future");
             $(this).removeClass("present");
         }
-        else if(blockHour === currenthour) {
-        $(this).removeClass("past");
-        $(this).addClass("present");
-        $(this).removeClass("future");
+        else if (blockHour === currenthour) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
 
-    }
-    else {
-        $(this).removeClass("present");
-        $(this).removeClass("past");
-        $(this).addClass("future");
-    }
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+        }
 
-})
+    })
 
 }
 hour();
+
 
 
 
