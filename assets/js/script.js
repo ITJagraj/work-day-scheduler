@@ -1,3 +1,4 @@
+$(document).ready(function () { // TO load the HTMl/CSS page 
 //display the current date 
 var today = moment().format('MMMM DD YYYY -  hh:mm:ss a');
 $("#currentDay").text(today);
@@ -26,19 +27,19 @@ $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
 
 function hour() {
-    var currenthour = moment().hour();
+    var currentHour = moment().hours();
     //loop over time blocks
     $(".time-block").each(function () {
-        var blockHour = parselnt($(this).attr("name");
+        var blockHour = parseInt($(this).attr("name"));
 
         console.log(blockHour, currentHour)
 
-        if (blockHour < currenthour) {
+        if (blockHour < currentHour) {
             $(this).addClass("past");
             $(this).removeClass("future");
             $(this).removeClass("present");
         }
-        else if (blockHour === currenthour) {
+        else if (blockHour === currentHour) {
             $(this).removeClass("past");
             $(this).addClass("present");
             $(this).removeClass("future");
@@ -54,6 +55,8 @@ function hour() {
 
 }
 hour();
+setInterval( hour, 5000);
+})
 
 
 
